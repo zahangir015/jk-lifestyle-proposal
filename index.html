@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JK Lifestyle Digital Ecosystem — CTO / Technical Architect Board Proposal" />
+  <meta name="theme-color" content="#07111f" />
+  <title>JK Lifestyle — Technical Architect Board Proposal</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="progress-track" aria-hidden="true"><div id="scroll-progress"></div></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="JK Lifestyle proposal home">
+      <span class="brand-mark">JK</span>
+      <span>
+        <strong>JK Lifestyle</strong>
+        <small>Digital Ecosystem</small>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#strategy">Strategy</a>
+      <a href="#architecture">Architecture</a>
+      <a href="#investment">Investment</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#governance">Governance</a>
+      <a href="#risks">Risks</a>
+    </nav>
+    <button class="print-btn" type="button" onclick="window.print()" title="Print or save as PDF">Print / PDF</button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-shell">
+      <div class="eyebrow-row">
+        <span class="eyebrow">CONFIDENTIAL · BOARD PROPOSAL · SEPTEMBER 2026</span>
+        <span class="status-pill">Planning baseline</span>
+      </div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="kicker">CTO / Technical Architect Proposal</p>
+          <h1>One digital operating system for the JK Lifestyle group.</h1>
+          <p class="hero-lead">A 24-month architecture, delivery and investment plan connecting Website, Super App, ERP, Clinical, Commerce, Membership, Community, Data and AI — without a big-bang business cutover.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#roadmap">View 24-month roadmap</a>
+            <a class="button button-secondary" href="#investment">Review investment</a>
+          </div>
+        </div>
+        <aside class="decision-card">
+          <span class="decision-label">Architect recommendation</span>
+          <h2>Stabilize operations first. Scale digital experiences on trusted data.</h2>
+          <ol>
+            <li>Foundation + identity + master data</li>
+            <li>ERP / POS + Clinical backbone</li>
+            <li>Website + Super App care loop</li>
+            <li>Community / Franchise + Data / AI maturity</li>
+          </ol>
+        </aside>
+      </div>
+
+      <div class="hero-metrics" aria-label="Program summary metrics">
+        <article><span>Planning horizon</span><strong>24 months</strong><small>Overlapping delivery phases</small></article>
+        <article><span>Base delivery spend</span><strong>BDT 90.3M</strong><small>Before contingency</small></article>
+        <article><span>Program ceiling</span><strong>BDT 101.1M</strong><small>~BDT 10.1 crore</small></article>
+        <article><span>Peak build team</span><strong>~13 core FTE</strong><small>Plus specialists / moderators</small></article>
+      </div>
+    </section>
+
+    <section id="strategy" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">01</span>
+        <div>
+          <p class="kicker">Strategy</p>
+          <h2>The sequence is the architecture.</h2>
+          <p>Customer-facing growth is deliberately built on top of operational reliability, clean master data and a clinical backbone.</p>
+        </div>
+      </div>
+
+      <div class="sequence-grid">
+        <article class="sequence-card emphasis">
+          <span class="sequence-step">01</span>
+          <h3>Foundation</h3>
+          <p>JK ID / SSO, API Gateway, master data, environments, CI/CD, Odoo stabilization.</p>
+          <span class="time-chip">M1–2</span>
+        </article>
+        <article class="sequence-card">
+          <span class="sequence-step">02</span>
+          <h3>ERP + POS</h3>
+          <p>Finance, inventory, batch/FEFO, offline POS, HR/payroll core, MIS.</p>
+          <span class="time-chip">M2–6</span>
+        </article>
+        <article class="sequence-card">
+          <span class="sequence-step">03</span>
+          <h3>Clinical + Web</h3>
+          <p>Patient, OPD, EMR, Care Plan authoring, group website, commerce and booking.</p>
+          <span class="time-chip">M4–10</span>
+        </article>
+        <article class="sequence-card">
+          <span class="sequence-step">04</span>
+          <h3>Super App</h3>
+          <p>Care loop, Food Log AI, devices, membership, CRM / Customer 360.</p>
+          <span class="time-chip">M8–14</span>
+        </article>
+        <article class="sequence-card">
+          <span class="sequence-step">05</span>
+          <h3>Community + Growth</h3>
+          <p>Community, LMS, franchise, staff apps and partner integrations.</p>
+          <span class="time-chip">M12–18</span>
+        </article>
+        <article class="sequence-card">
+          <span class="sequence-step">06</span>
+          <h3>Data + AI maturity</h3>
+          <p>Warehouse, BI, prediction, local food model POC, performance and handover.</p>
+          <span class="time-chip">M16–24</span>
+        </article>
+      </div>
+
+      <div class="principles-band">
+        <div><strong>Hybrid ERP</strong><span>Odoo for Finance / Inventory; custom services for differentiated domains.</span></div>
+        <div><strong>Modular first</strong><span>Domain boundaries now; split to microservices only when scale / compliance justify it.</span></div>
+        <div><strong>No big bang</strong><span>Staging rehearsal, parallel run, reconciliation and controlled cutover.</span></div>
+        <div><strong>UAT continuously</strong><span>Two-week sprints with targeted UAT — not one final testing phase.</span></div>
+      </div>
+    </section>
+
+    <section id="architecture" class="section section-shell section-dark">
+      <div class="section-heading light">
+        <span class="section-no">02</span>
+        <div>
+          <p class="kicker">Architecture</p>
+          <h2>Shared identity. Clear ownership. API-first boundaries.</h2>
+          <p>No client platform reaches into another domain's database. Integration crosses through controlled APIs and events.</p>
+        </div>
+      </div>
+
+      <div class="architecture-board" role="img" aria-label="High level JK Lifestyle digital ecosystem architecture">
+        <div class="arch-row arch-clients">
+          <div class="arch-box"><span>Customer</span><strong>Super Website</strong></div>
+          <div class="arch-box"><span>Customer</span><strong>Super App</strong></div>
+          <div class="arch-box"><span>Workforce</span><strong>Staff Apps</strong></div>
+          <div class="arch-box"><span>Operations</span><strong>ERP Console</strong></div>
+        </div>
+        <div class="arch-connector"></div>
+        <div class="arch-foundation">
+          <small>SHARED FOUNDATION</small>
+          <strong>JK ID / SSO · API Gateway · Notification · CMS · Search · Payment · Loyalty</strong>
+        </div>
+        <div class="arch-connector"></div>
+        <div class="arch-row arch-domains">
+          <div class="arch-box domain"><strong>Commerce</strong><span>Orders / E-commerce</span></div>
+          <div class="arch-box domain"><strong>Clinical</strong><span>EMR / Care Plan</span></div>
+          <div class="arch-box domain"><strong>Membership</strong><span>Fitness / CRM</span></div>
+          <div class="arch-box domain"><strong>Community</strong><span>Education / LMS</span></div>
+          <div class="arch-box domain"><strong>Core ERP</strong><span>Finance / Inventory</span></div>
+        </div>
+        <div class="arch-connector"></div>
+        <div class="arch-data">
+          <small>DATA, EVENTS & AI</small>
+          <strong>PostgreSQL · Redis · RabbitMQ · Object Storage · Data Warehouse · AI / ML</strong>
+        </div>
+        <div class="arch-connector"></div>
+        <div class="arch-integrations">
+          <small>INTEGRATION LAYER</small>
+          <strong>Payment / MFS · SMS / Email / WhatsApp · Health Connect / HealthKit · Wearable APIs · Sinbad · Odoo</strong>
+        </div>
+      </div>
+
+      <div class="architecture-notes">
+        <article><span class="mini-label">Cloud posture</span><h3>Hybrid-leaning-cloud</h3><p>Managed cloud for applications and data, with local resilience where clinical / outlet continuity requires it.</p></article>
+        <article><span class="mini-label">Security posture</span><h3>Health + finance are privileged domains</h3><p>RBAC, 2FA for staff, encryption, consent records, auditability, VAPT before major go-lives.</p></article>
+        <article><span class="mini-label">Event posture</span><h3>Capture useful events from day one</h3><p>Operational events feed alerts, analytics and the future Data / AI layer without retrofitting history later.</p></article>
+      </div>
+    </section>
+
+    <section id="stack" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">03</span>
+        <div>
+          <p class="kicker">Technology</p>
+          <h2>Conservative technology choices, optimized for delivery and ownership.</h2>
+          <p>The stack favors maintainability, hiring availability, offline capability and a clean future migration path.</p>
+        </div>
+      </div>
+      <div class="stack-grid" id="stack-grid"></div>
+    </section>
+
+    <section id="investment" class="section section-shell section-tinted">
+      <div class="section-heading">
+        <span class="section-no">04</span>
+        <div>
+          <p class="kicker">Investment</p>
+          <h2>BDT 101.1M ceiling, controlled through quarterly gates.</h2>
+          <p>BDT 90.3M is the delivery baseline. The BDT 10.8M contingency is centrally held and released only against approved risk or change.</p>
+        </div>
+      </div>
+
+      <div class="investment-summary">
+        <div class="donut-wrap">
+          <div class="donut" aria-label="Program cost allocation donut"><div><strong>101.1M</strong><span>BDT ceiling</span></div></div>
+        </div>
+        <div class="budget-list" id="budget-list"></div>
+      </div>
+
+      <div class="finance-grid">
+        <article class="finance-card">
+          <span class="mini-label">Engineering + specialists</span>
+          <strong>BDT 68.8M</strong>
+          <p>Loaded in-house payroll plus Odoo, UI/UX and ML specialist support.</p>
+        </article>
+        <article class="finance-card">
+          <span class="mini-label">Cloud / platform</span>
+          <strong>BDT 10.0M</strong>
+          <p>Compute, managed database, cache/queue, storage/CDN and backup/DR.</p>
+        </article>
+        <article class="finance-card">
+          <span class="mini-label">Other delivery cost</span>
+          <strong>BDT 11.5M</strong>
+          <p>AI/API, SaaS, security, equipment, migration/training and recruitment.</p>
+        </article>
+        <article class="finance-card risk-reserve">
+          <span class="mini-label">Contingency</span>
+          <strong>BDT 10.8M</strong>
+          <p>12% reserve; not pre-allocated to teams or features.</p>
+        </article>
+      </div>
+
+      <div class="quarterly-panel">
+        <div class="panel-heading">
+          <div><span class="mini-label">Funding control</span><h3>Quarterly budget release</h3></div>
+          <p>Next-quarter funding follows delivery acceptance, while burn is reviewed monthly.</p>
+        </div>
+        <div id="quarter-bars" class="quarter-bars"></div>
+      </div>
+
+      <div class="assumption-note">
+        <strong>Board note:</strong> Payment/MFS transaction fees, Odoo Enterprise license, taxes/VAT and unusually high video/AI usage sit outside the baseline until actual contracts and consumption are known.
+      </div>
+    </section>
+
+    <section id="team" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">05</span>
+        <div>
+          <p class="kicker">Team & ownership</p>
+          <h2>Build JK Tech while delivering the platform.</h2>
+          <p>Core IP and privileged domains remain in-house; niche specialists are used with explicit knowledge-transfer and sunset plans.</p>
+        </div>
+      </div>
+      <div class="team-grid" id="team-grid"></div>
+      <div class="ownership-strip">
+        <div><span>Always in-house</span><strong>Identity · Clinical · finance-adjacent logic · DevOps</strong></div>
+        <div><span>Specialist bridge</span><strong>Odoo · ML / AI · UI/UX</strong></div>
+        <div><span>End state</span><strong>JK Tech capable of independent delivery and BAU ownership</strong></div>
+      </div>
+    </section>
+
+    <section id="execution" class="section section-shell section-dark">
+      <div class="section-heading light">
+        <span class="section-no">06</span>
+        <div>
+          <p class="kicker">Execution model</p>
+          <h2>Eight parallel workstreams, synchronized by dependencies.</h2>
+          <p>Parallelism reduces calendar time, but integration starts only when identity, data ownership and upstream contracts are stable.</p>
+        </div>
+      </div>
+      <div id="workstream-grid" class="workstream-grid"></div>
+    </section>
+
+    <section id="roadmap" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">07</span>
+        <div>
+          <p class="kicker">Roadmap</p>
+          <h2>Twenty-four months, month by month.</h2>
+          <p>Every month has a primary focus, a tangible delivery increment and an acceptance / UAT gate.</p>
+        </div>
+      </div>
+
+      <div class="roadmap-tabs" role="tablist" aria-label="Roadmap year selector">
+        <button class="roadmap-tab active" data-year="1" role="tab" aria-selected="true">Months 1–12</button>
+        <button class="roadmap-tab" data-year="2" role="tab" aria-selected="false">Months 13–24</button>
+      </div>
+      <div id="roadmap-list" class="roadmap-list"></div>
+    </section>
+
+    <section id="first90" class="section section-shell section-tinted">
+      <div class="section-heading">
+        <span class="section-no">08</span>
+        <div>
+          <p class="kicker">First 90 days</p>
+          <h2>Turn architecture into a controlled first live slice.</h2>
+          <p>The first quarter moves from discovery to environment readiness, identity, master data, Odoo stabilization and a shadow-mode POS pilot.</p>
+        </div>
+      </div>
+      <div id="first90-grid" class="first90-grid"></div>
+    </section>
+
+    <section id="governance" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">09</span>
+        <div>
+          <p class="kicker">Quality & governance</p>
+          <h2>Funding follows evidence, not activity.</h2>
+          <p>Release gates combine business acceptance, security, resilience, migration quality and operating readiness.</p>
+        </div>
+      </div>
+
+      <div class="gate-flow">
+        <div><span>1</span><strong>Build</strong><small>Unit / integration / API contracts</small></div>
+        <i></i>
+        <div><span>2</span><strong>Targeted UAT</strong><small>Every sprint</small></div>
+        <i></i>
+        <div><span>3</span><strong>Regression</strong><small>Monthly pack</small></div>
+        <i></i>
+        <div><span>4</span><strong>Security / DR</strong><small>Before major go-live</small></div>
+        <i></i>
+        <div><span>5</span><strong>Go / No-Go</strong><small>Tech Lead + Business Owner</small></div>
+        <i></i>
+        <div><span>6</span><strong>Hypercare</strong><small>2–4 weeks</small></div>
+      </div>
+
+      <div class="governance-grid" id="governance-grid"></div>
+
+      <div class="budget-control">
+        <div><span class="budget-trigger">70%</span><p>Monthly cost alert</p></div>
+        <div><span class="budget-trigger">85%</span><p>Escalated alert</p></div>
+        <div><span class="budget-trigger">100%</span><p>Hard envelope alert</p></div>
+        <div><span class="budget-trigger">&gt;5%</span><p>Forecast variance → recovery plan</p></div>
+        <div><span class="budget-trigger">&gt;10%</span><p>Steering approval required</p></div>
+      </div>
+    </section>
+
+    <section id="risks" class="section section-shell section-dark">
+      <div class="section-heading light">
+        <span class="section-no">10</span>
+        <div>
+          <p class="kicker">Risk controls</p>
+          <h2>Make known failure modes visible before they become schedule slips.</h2>
+          <p>Hiring, dirty legacy data, workflow churn, scope, vendor APIs and security are treated as program risks, not engineering surprises.</p>
+        </div>
+      </div>
+      <div id="risk-grid" class="risk-grid"></div>
+    </section>
+
+    <section id="vision" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">11</span>
+        <div>
+          <p class="kicker">Three-year operating view</p>
+          <h2>The cost profile changes as the platform matures.</h2>
+          <p>Development dominates early; infrastructure and operating maturity become the major recurring concerns as adoption grows.</p>
+        </div>
+      </div>
+      <div class="vision-grid">
+        <article><span>Year 1</span><h3>Build the operating backbone</h3><p>Foundation, ERP/POS, Clinical and Website. Highest one-time development intensity; lower infrastructure usage.</p></article>
+        <article><span>Year 2</span><h3>Scale digital products</h3><p>Super App, Community, Franchise, Data/AI. Development continues while cloud, media and AI consumption rise.</p></article>
+        <article><span>Year 3</span><h3>Operate, optimize, evolve</h3><p>Steady-state enhancement and support. Infrastructure becomes the largest recurring line as usage compounds.</p></article>
+      </div>
+    </section>
+
+    <section id="metrics" class="section section-shell section-tinted final-section">
+      <div class="section-heading">
+        <span class="section-no">12</span>
+        <div>
+          <p class="kicker">Board dashboard</p>
+          <h2>What the Steering Committee should watch.</h2>
+          <p>These are the source plan's design targets and control metrics — not promises of business performance.</p>
+        </div>
+      </div>
+      <div class="metric-board">
+        <article><span>Initial outlet design</span><strong>11</strong><small>Scale support to 15–20 in later phases</small></article>
+        <article><span>Daily clinical volume</span><strong>500–700</strong><small>Directional design target</small></article>
+        <article><span>Peak concurrency</span><strong>5,000</strong><small>Target capacity, progressively provisioned</small></article>
+        <article><span>Year-1 online users</span><strong>50,000+</strong><small>Directional registered-user target</small></article>
+        <article><span>Sprint cadence</span><strong>2 weeks</strong><small>Demo + UAT every sprint</small></article>
+        <article><span>Program gates</span><strong>5</strong><small>Major acceptance / transition gates</small></article>
+      </div>
+
+      <div class="closing-card">
+        <p class="kicker">Decision requested</p>
+        <h2>Approve the 24-month roadmap as a gated investment, not a fixed blank cheque.</h2>
+        <p>Authorize Phase 0 / Q1 only after named business owners, data-access owners and recruitment ownership are confirmed. Reforecast quarterly using actual salary, cloud, AI, communication and storage unit costs.</p>
+        <div class="closing-actions">
+          <a class="button button-primary" href="#top">Back to top</a>
+          <button class="button button-secondary" type="button" onclick="window.print()">Print board pack</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>JK Lifestyle Digital Ecosystem</strong><span>Technical Architect Board Proposal · Confidential</span></div>
+    <div class="footer-meta">Planning figures require HR / Finance / Procurement validation before financial approval.</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
