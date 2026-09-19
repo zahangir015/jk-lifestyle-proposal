@@ -40,3 +40,12 @@ Leave **Custom domain** blank unless you own a real DNS domain such as `proposal
 ## Important
 
 Do not rename or move the DOCX without also updating the three download links in `index.html`.
+
+## Key board-question coverage
+
+The web proposal and bundled DOCX are synchronized and now include concise answers for:
+
+- Q10 — top project-failure risks and controls
+- Q14 — Community moderation at scale and health-misinformation control
+- Q15 — dangerous-reading alert responsibility, escalation and technical reliability
+- Q16 — media, video and AI processing cost control

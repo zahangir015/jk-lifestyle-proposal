@@ -24,6 +24,7 @@
       <a href="#decision">Decision</a>
       <a href="#architecture">Architecture</a>
       <a href="#platform">Platform</a>
+      <a href="#key-questions">Q&A</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#investment">Costing</a>
       <a href="#governance">Governance</a>
@@ -354,6 +355,41 @@
         <article><span class="mini-label">Cost control</span><strong>Cache + batch</strong><p>Reuse common meal recognition and queue non-urgent work to reduce per-call vendor cost.</p></article>
         <article><span class="mini-label">Dataset strategy</span><strong>Local + consented</strong><p>Nutrition-team reference data, anonymized user corrections and properly licensed regional datasets.</p></article>
         <article><span class="mini-label">Long-term architecture</span><strong>Warehouse + model serving</strong><p>Event lineage, consent tags and stable metric codes are established before prediction features depend on them.</p></article>
+      </div>
+    </section>
+
+
+    <section id="key-questions" class="section section-shell">
+      <div class="section-heading">
+        <span class="section-no">Q</span>
+        <div>
+          <p class="kicker">Concise board answers</p>
+          <h2>Four high-impact questions, answered in operational terms.</h2>
+          <p>These answers summarize controls already defined across architecture, delivery, risk management and operating-cost design.</p>
+        </div>
+      </div>
+
+      <div class="decision-grid">
+        <article class="decision-tile">
+          <span>Q10 · Project failure</span>
+          <strong>Three primary failure drivers to control</strong>
+          <p>Dirty Odoo/Excel/master data → profile early, migrate in stages, reconcile and verify stock before cut-over. Clinical workflow churn → embed the Clinical SME, prototype early and sign acceptance criteria. Capacity/scope pressure → phase hiring, use specialist bridge support when needed, and enforce Definition of Done, change control and quarterly gates.</p>
+        </article>
+        <article class="decision-tile">
+          <span>Q14 · Community moderation</span>
+          <strong>Automation flags; humans decide</strong>
+          <p>Technology auto-flags health-misinformation patterns, while humans make moderation decisions through a Moderation Console under an SLA. Moderation tooling and minimum moderation capacity are hard Community go-live gates; health-content decisions are not delegated to AI alone.</p>
+        </article>
+        <article class="decision-tile">
+          <span>Q15 · Dangerous alerts</span>
+          <strong>Clinician accountability with reliable escalation</strong>
+          <p>A dangerous reading triggers the Alert Engine, which notifies the patient and creates the assigned clinician task in parallel. The clinician is accountable within a defined SLA; unacknowledged alerts escalate to the on-call supervisor. Queued events, idempotent retry, delivery monitoring, trace IDs and an audit trail protect reliability.</p>
+        </article>
+        <article class="decision-tile">
+          <span>Q16 · Media & AI cost</span>
+          <strong>Control variable cost at every layer</strong>
+          <p>Right-size compute with autoscaling limits; compress images, use CDN caching, adaptive-bitrate video and lifecycle/cold-storage rules; cache repeated/common meal recognition and batch non-urgent AI processing. Track storage/CDN/AI unit costs monthly and move from Buy to Build only when quality and economics justify it.</p>
+        </article>
       </div>
     </section>
 
