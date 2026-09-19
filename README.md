@@ -1,44 +1,42 @@
-# JK Lifestyle — Technical Architect Board Proposal
+# JK Lifestyle — Technical Architecture, Execution & Costing Board Proposal
 
-A static, board-ready microsite derived from the JK Lifestyle Technical Development Plan and Detailed Execution / Costing Plan.
+Static GitHub Pages site for the JK Lifestyle Digital Ecosystem CTO / Technical Architect board proposal. The website and Word board pack are synchronized.
 
-## Run locally
+## Current synchronized baseline
 
-No build step or package install is required.
+- 24-month architecture-led roadmap
+- BDT 26.9M loaded engineering + specialist cost
+- BDT 48.4M delivery baseline
+- BDT 5.8M controlled contingency
+- BDT 54.3M total planning ceiling (~5.43 crore)
+- ~14 active technical FTE at peak
+- No separate Product Owner, Data/AI Engineer, ML/AI Specialist or Community Moderator FTE in the current costing baseline; those responsibilities are consolidated under the Tech Lead / Architect.
+- Hybrid ERP: Odoo for Finance/Inventory; custom platform for Clinical, Care Plan, Commerce, Membership, Community/Franchise and Data/AI.
+- Modular/bounded-domain architecture with API-first integration, RabbitMQ events, offline-first POS, explicit consent/audit controls and progressive AI Buy→Build strategy.
 
-```bash
-python3 -m http.server 8080
-```
+## Files
 
-Then open `http://localhost:8080`.
+- `index.html` — board proposal content and visual structure
+- `styles.css` — responsive design and print styling
+- `script.js` — roadmap, tables, charts and interactive elements
+- `JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx` — synchronized downloadable Word board pack
 
-## Publish to GitHub Pages
+The page links to the DOCX using a relative same-origin URL, so the **Download DOCX** button works directly on GitHub Pages.
 
-1. Create a GitHub repository, for example `jk-lifestyle-board-proposal`.
-2. Copy `index.html`, `styles.css`, and `script.js` to the repository root.
-3. Push to the `main` branch.
-4. Open **Settings → Pages**.
-5. Under **Build and deployment**, choose **Deploy from a branch**.
-6. Choose `main` and `/ (root)`, then Save.
+## Deploy with GitHub Pages
 
-The site uses no framework, external fonts, analytics, CDN libraries, or runtime API, so it can be hosted directly on GitHub Pages, Cloudflare Pages, Netlify, Vercel, S3/CloudFront, or any static server.
+1. Upload **all four files** to the repository root.
+2. Open **Settings → Pages**.
+3. Choose **Deploy from a branch**.
+4. Select your default branch (`main` or `master`) and `/ (root)`.
+5. Save and wait for deployment.
 
-## Content model
+For a repository named `jk-lifestyle-board-proposal` under user `zahangir015`, the default Pages URL is typically:
 
-Editable datasets live at the top of `script.js`:
+`https://zahangir015.github.io/jk-lifestyle-board-proposal/`
 
-- Technology stack
-- Budget categories
-- Quarterly budget release
-- Role-rate assumptions
-- Workstreams
-- Month-by-month roadmap
-- First-90-day plan
-- Governance cadence
-- Program risks
+Leave **Custom domain** blank unless you own a real DNS domain such as `proposal.example.com`.
 
-The HTML contains the executive narrative and architecture presentation.
+## Important
 
-## Financial disclaimer
-
-The site presents planning assumptions, not signed quotations. Salary bands, cloud sizing, Odoo licensing, AI/API pricing, SMS/payment fees, VAPT quotes, taxes/VAT and high media usage should be validated before financial approval.
+Do not rename or move the DOCX without also updating the three download links in `index.html`.
