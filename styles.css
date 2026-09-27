@@ -470,3 +470,8 @@ img { max-width: 100%; display: block; }
 @media print {
   .document-sync, .board-download { display: none !important; }
 }
+
+/* v5: Odoo Community + Custom ERP/Clinical ownership update */
+.arch-clients { grid-template-columns: repeat(5, 1fr); }
+@media (max-width: 1100px) { .arch-clients { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 820px) { .arch-clients { grid-template-columns: 1fr; } }

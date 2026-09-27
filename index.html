@@ -29,6 +29,7 @@
       <a href="#investment">Costing</a>
       <a href="#governance">Governance</a>
       <a href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx" download title="Download the synchronized Word proposal">DOCX ↓</a>
+      <a href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.pdf" download title="Download the synchronized PDF proposal">PDF ↓</a>
     </nav>
     <button class="print-btn" type="button" onclick="window.print()" title="Print or save as PDF">Print / PDF</button>
   </header>
@@ -43,11 +44,10 @@
         <div class="hero-copy">
           <p class="kicker">JK Lifestyle Digital Ecosystem</p>
           <h1>One trusted digital operating platform for the entire group.</h1>
-          <p class="hero-lead">A 24-month architecture, engineering and investment plan connecting Website, Super App, ERP, Clinical, Commerce, Membership, Community, Data and AI — while preserving business continuity and controlled ownership boundaries.</p>
+          <p class="hero-lead">A 24-month architecture, engineering and investment plan built around two enterprise cores: Odoo Community for commercial and financial processing, and a custom JK ERP/Clinical platform for differentiated clinical, workforce and care operations — connected to Website, Super App, Community, Data and AI through controlled APIs and events.</p>
           <div class="hero-actions">
             <a class="button button-primary" href="#architecture">Explore architecture</a>
             <a class="button button-secondary" href="#roadmap">Review delivery roadmap</a>
-            <a class="button button-secondary" href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx" download>Download full DOCX ↓</a>
           </div>
         </div>
         <aside class="decision-card">
@@ -55,7 +55,7 @@
           <h2>Stabilize data and operations first. Scale customer experiences on top of trusted systems.</h2>
           <ol>
             <li>Identity, API foundation, environments and master data</li>
-            <li>ERP / POS and Clinical backbone</li>
+            <li>Odoo Community commercial/financial core + Custom ERP/Clinical backbone</li>
             <li>Website + Super App closed-loop care experience</li>
             <li>Community, franchise, analytics and AI maturity</li>
           </ol>
@@ -75,11 +75,6 @@
         <span>5,000 peak concurrent users</span>
         <span>50,000+ registered users in Year 1</span>
       </div>
-
-      <div class="document-sync">
-        <div><strong>Document + web synchronized</strong><span>This GitHub Pages proposal and the downloadable Word document use the same architecture, roadmap, role assumptions and BDT 54.3M planning ceiling.</span></div>
-        <a class="button button-primary" href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx" download>Download Word proposal</a>
-      </div>
     </section>
 
     <section id="decision" class="section section-shell">
@@ -94,7 +89,7 @@
 
       <div class="decision-grid">
         <article class="decision-tile"><span>Architecture style</span><strong>Modular monolith / bounded domains</strong><p>5–6 domain-aligned deployable services with clean internal contracts. Microservices are introduced only when scaling, compliance or workload isolation justifies them.</p></article>
-        <article class="decision-tile"><span>ERP strategy</span><strong>Hybrid</strong><p>Odoo remains responsible for Finance, Accounts, core Inventory/Warehouse and initially Procurement; differentiated business domains remain custom services.</p></article>
+        <article class="decision-tile"><span>ERP strategy</span><strong>Hybrid: Odoo Community + Custom ERP/Clinical</strong><p>Odoo Community owns Product, Inventory/Warehouse, Procurement, POS, outlet and online/e-commerce sales processing, customer financial invoices and Accounting. The custom JK ERP owns Doctor/Patient, Appointment, OPD/EMR, Care Plan, Clinical Billing workflow, ARM, Attendance and Payroll.</p></article>
         <article class="decision-tile"><span>Cloud posture</span><strong>Hybrid-leaning-cloud</strong><p>Managed cloud for applications/data, with local resilience for clinical and outlet continuity where internet dependency is unacceptable.</p></article>
         <article class="decision-tile"><span>Delivery model</span><strong>Overlapping workstreams + gated releases</strong><p>Independent teams work in parallel, while identity, master data, Clinical and other critical dependencies are explicitly enforced.</p></article>
       </div>
@@ -120,10 +115,11 @@
       <div class="architecture-board" role="img" aria-label="JK Lifestyle digital ecosystem layered architecture">
         <div class="arch-caption">Experience / Channel Layer</div>
         <div class="arch-row arch-clients">
-          <div class="arch-box"><span>Customer</span><strong>Super Website</strong><small>Group hub · Commerce · Booking</small></div>
+          <div class="arch-box"><span>Customer</span><strong>Super Website</strong><small>Group hub · Commerce UX · Booking</small></div>
           <div class="arch-box"><span>Customer</span><strong>Super App</strong><small>Care plan · Food log · Membership</small></div>
           <div class="arch-box"><span>Workforce</span><strong>Staff Apps</strong><small>Delivery · Sample · Field sales</small></div>
-          <div class="arch-box"><span>Operations</span><strong>ERP / Clinical Console</strong><small>Admin · Finance · Clinical</small></div>
+          <div class="arch-box"><span>Custom Operations</span><strong>JK ERP / Clinical</strong><small>Doctor · Appointment · EMR · ARM/HR</small></div>
+          <div class="arch-box"><span>Commercial Operations</span><strong>Odoo Community</strong><small>POS · Sales · Inventory · Accounting</small></div>
         </div>
         <div class="arch-connector"></div>
         <div class="arch-foundation">
@@ -133,11 +129,11 @@
         <div class="arch-connector"></div>
         <div class="arch-caption">Business Domain Layer</div>
         <div class="arch-row arch-domains">
-          <div class="arch-box domain"><strong>Commerce</strong><span>Orders · E-commerce · Booking</span></div>
-          <div class="arch-box domain"><strong>Clinical / Care</strong><span>Patient · OPD · EMR · Care Plan</span></div>
+          <div class="arch-box domain"><strong>Commercial / Financial ERP</strong><span>Odoo POS · Sales · Inventory · Accounting</span></div>
+          <div class="arch-box domain"><strong>Clinical / Care</strong><span>Doctor · Patient · Appointment · EMR · Care Plan</span></div>
+          <div class="arch-box domain"><strong>HR / ARM / Workforce</strong><span>ARM · Attendance · Payroll</span></div>
           <div class="arch-box domain"><strong>Membership / Fitness</strong><span>Member · Class · CRM 360</span></div>
           <div class="arch-box domain"><strong>Community / Education</strong><span>Feed · Moderation · LMS</span></div>
-          <div class="arch-box domain"><strong>Core ERP</strong><span>Finance · Inventory · Procurement</span></div>
         </div>
         <div class="arch-connector"></div>
         <div class="arch-data">
@@ -147,7 +143,7 @@
         <div class="arch-connector"></div>
         <div class="arch-integrations">
           <small>INTEGRATION LAYER</small>
-          <strong>Odoo · Payment/MFS · SMS/Email/WhatsApp · Health Connect · HealthKit · Wearable APIs/BLE · Sinbad · Biometric/Lab Devices</strong>
+          <strong>Payment/MFS · SMS/Email/WhatsApp · Health Connect · HealthKit · Wearable APIs/BLE · Sinbad · Biometric/Lab Devices · Other partner APIs</strong>
         </div>
       </div>
 
@@ -165,15 +161,16 @@
         <div>
           <p class="kicker">Domain ownership</p>
           <h2>Clear bounded contexts reduce coupling, migration risk and vendor lock-in.</h2>
-          <p>The core design keeps commodity ERP responsibilities in Odoo and the group's differentiated customer, clinical and engagement capabilities in custom services.</p>
+          <p>The boundary is explicit: Odoo Community is the commercial/financial transaction engine, while JK's custom ERP/Clinical platform owns differentiated clinical, workforce and care workflows. Website and App remain JK-owned experience channels.</p>
         </div>
       </div>
 
       <div class="domain-matrix">
         <article><span class="domain-tag">Custom</span><h3>Identity & Shared Platform</h3><p>JK ID, authentication, RBAC, consent, notification, audit, API gateway, integration contracts and cross-platform policies.</p><small>Primary ownership: JK Tech</small></article>
-        <article><span class="domain-tag">Odoo + Integration</span><h3>Finance & Inventory</h3><p>Accounts, stock, warehouse, procurement, posting and core ERP data remain in Odoo behind an integration boundary.</p><small>Primary ownership: Odoo domain + JK Tech API boundary</small></article>
-        <article><span class="domain-tag">Custom</span><h3>Clinical & Care Plan</h3><p>Patient registration, appointment, OPD, EMR, consent, Care Plan authoring, tasks, alerts and clinician workflows.</p><small>Primary ownership: JK Tech + Clinical SME</small></article>
-        <article><span class="domain-tag">Custom</span><h3>Commerce & Booking</h3><p>Website, unified cart, product catalogue, online orders, booking and downstream finance/inventory integration via events/APIs.</p><small>Primary ownership: JK Tech</small></article>
+        <article><span class="domain-tag">Odoo Community</span><h3>Commercial & Financial ERP</h3><p>Product, Inventory/Warehouse, Procurement, POS, outlet sales, online/e-commerce sales processing, customer invoices, payment/reconciliation and Accounting.</p><small>System of record: Odoo Community</small></article>
+        <article><span class="domain-tag">Custom</span><h3>Clinical & Care Plan</h3><p>Doctor profile, patient, appointment request/process, OPD, EMR, consent, Care Plan, clinical billing workflow, tasks and alerts.</p><small>Primary ownership: JK Tech + Clinical SME</small></article>
+        <article><span class="domain-tag">Custom</span><h3>HR / ARM / Workforce</h3><p>ARM, employee operations, Attendance, leave/roster and Payroll calculation/approval. Approved payroll financial summaries post to Odoo.</p><small>Primary ownership: Custom JK ERP</small></article>
+        <article><span class="domain-tag">Custom UX + Odoo processing</span><h3>Digital Commerce Experience</h3><p>Website and Super App own catalogue/checkout/booking UX. Commercial sales transactions are created and processed through Odoo APIs/adapters.</p><small>UX: JK Tech · Transaction engine: Odoo</small></article>
         <article><span class="domain-tag">Custom</span><h3>Membership / Fitness / CRM</h3><p>Membership lifecycle, classes, profile view and CRM/Customer 360 as a read model over the shared identity.</p><small>Primary ownership: JK Tech</small></article>
         <article><span class="domain-tag">Custom</span><h3>Community / Education / Franchise</h3><p>Community feed, moderation console, LMS/video, franchise/distribution and field-operation workflows.</p><small>Primary ownership: JK Tech</small></article>
       </div>
@@ -181,14 +178,14 @@
       <div class="erp-boundary">
         <div class="erp-column od">
           <span>Odoo owns</span>
-          <strong>Finance · Accounts · Inventory · Warehouse · Procurement</strong>
-          <p>Commodity ERP capabilities with existing operational data and local accounting support.</p>
+          <strong>Product · Inventory · Warehouse · Procurement · POS · Outlet Sales · Online/E-commerce Sales · Financial Invoice · Payment/Reconciliation · Accounting</strong>
+          <p>Odoo Community is the commercial and financial system of record. Website/App sales enter through supported APIs/adapters; custom services never write directly to Odoo tables.</p>
         </div>
         <div class="erp-arrow">API / Events ↔</div>
         <div class="erp-column custom">
           <span>Custom platform owns</span>
-          <strong>Clinical · Care Plan · Membership · Community · Franchise · Data/AI</strong>
-          <p>Differentiated group capabilities designed to evolve independently of Odoo internals.</p>
+          <strong>Doctor · Patient · Appointment · OPD/EMR · Care Plan · Clinical Billing · ARM · Attendance · Payroll · Membership · Community · Data/AI</strong>
+          <p>Custom ERP/Clinical owns operational workflow. Confirmed clinical charges and approved payroll summaries post to Odoo so the financial ledger remains single-source.</p>
         </div>
       </div>
     </section>
@@ -206,10 +203,10 @@
       <div class="data-model-grid">
         <article class="data-card key"><span class="mini-label">Identity root</span><h3>party (JK ID)</h3><p>Name, contact, consent and authentication identity used across every channel.</p><code>party_id → all roles</code></article>
         <article class="data-card"><span class="mini-label">Role model</span><h3>party_role</h3><p>One person can be Customer, Patient, Member, Employee or Vendor without duplicate identity records.</p><code>customer | patient | member | employee</code></article>
-        <article class="data-card"><span class="mini-label">Traceability</span><h3>product_batch</h3><p>Links farm/vendor origin to stock ledger movement and final order line, enabling batch traceability and FEFO rules.</p><code>farm_batch → stock_ledger → order_line</code></article>
+        <article class="data-card"><span class="mini-label">Commercial reference</span><h3>odoo_product / lot / stock_ref</h3><p>Custom services store stable references to Odoo-owned product, lot and stock records rather than duplicating the commercial source of truth.</p><code>odoo_id · lot_id · location_id</code></article>
         <article class="data-card"><span class="mini-label">Clinical flexibility</span><h3>care_plan_target</h3><p>Typed key/value metrics allow new targets without adding fixed columns for every future clinical metric.</p><code>metric_code · value · unit</code></article>
         <article class="data-card"><span class="mini-label">Device data</span><h3>device_reading</h3><p>Time-series glucose, weight, BP, steps and sleep data feed the app, alert engine and warehouse.</p><code>source · timestamp · metric · value</code></article>
-        <article class="data-card"><span class="mini-label">Unified transaction</span><h3>order</h3><p>A polymorphic order concept supports commerce, booking, appointment and membership purchase flows.</p><code>type + line_items</code></article>
+        <article class="data-card"><span class="mini-label">Financial bridge</span><h3>clinical_bill / payroll_run</h3><p>Custom workflow records retain clinical/payroll detail, while confirmed financial postings store the resulting Odoo invoice/journal references.</p><code>status · amount · odoo_posting_id</code></article>
       </div>
 
       <div class="flow-pair">
@@ -240,14 +237,14 @@
 
       <div class="split-technical">
         <article class="tech-panel">
-          <span class="mini-label">Offline POS</span>
-          <h3>Local-first transaction capture</h3>
+          <span class="mini-label">Odoo POS</span>
+          <h3>Use Odoo Community as the outlet transaction engine</h3>
           <ol>
-            <li>Outlet POS keeps local catalogue, price list and open-shift data in SQLite.</li>
-            <li>Sales are written locally first and queued for background synchronization.</li>
-            <li>Stock decrements are append-only events, not direct quantity overwrites.</li>
-            <li>If replay drives authoritative stock negative, the completed sale is retained and flagged for inventory review.</li>
-            <li>Cash/shift reconciliation remains independent from stock sync so closing is not blocked by an outage.</li>
+            <li>Odoo POS owns outlet sales, POS sessions, payment capture and inventory movements.</li>
+            <li>Validate the exact Community-version offline/reconnect behavior with browser/device/network-failure tests during the pilot.</li>
+            <li>Reconnect processing must be idempotent and reconcile duplicate sales, payments and stock movements before cut-over.</li>
+            <li>Custom ERP/Website/App never write directly to Odoo POS, stock or accounting tables; integrations use supported APIs/adapters.</li>
+            <li>Do not build a parallel custom POS ledger unless the M1–M2 gap analysis proves a hard requirement that Odoo cannot satisfy.</li>
           </ol>
         </article>
         <article class="tech-panel">
@@ -304,7 +301,7 @@
 
       <div class="resilience-band">
         <div><strong>Backup / DR</strong><span>Automated backups, restore testing, module-specific RTO/RPO and DR rehearsal before major releases.</span></div>
-        <div><strong>Local resilience</strong><span>Dhaka flagship may use a local edge/cache node over secured VPN; other outlets rely on offline-first POS and background sync.</span></div>
+        <div><strong>Local resilience</strong><span>Dhaka flagship may use a local edge/cache node over secured VPN; outlet continuity relies on the validated Odoo POS offline/reconnect path, with no duplicate custom sales ledger.</span></div>
         <div><strong>Observability</strong><span>Structured logs, trace IDs, metrics, SLO dashboards, vulnerability backlog and monthly cost review.</span></div>
       </div>
     </section>
@@ -399,7 +396,7 @@
         <div>
           <p class="kicker">24-month execution roadmap</p>
           <h2>Parallel delivery without ignoring dependency order.</h2>
-          <p>Architecture foundation runs throughout the program, while ERP/POS, Clinical, Website, Super App, Community and Data/AI mature in overlapping windows.</p>
+          <p>Architecture foundation runs throughout the program, while Odoo Community commercial/financial ERP, Custom ERP/Clinical/Workforce, Website, Super App, Community and Data/AI mature in overlapping windows.</p>
         </div>
       </div>
 
@@ -418,7 +415,7 @@
         <div>
           <p class="kicker">First 90 days</p>
           <h2>The first quarter proves the foundation and creates the first live operational slice.</h2>
-          <p>Every week has a technical objective and an acceptance output; by Week 12 the program reaches a controlled shadow-mode POS pilot.</p>
+          <p>Every week has a technical objective and an acceptance output; by Week 12 the program reaches a controlled Odoo Community POS/outlet-sales pilot with reconciliation evidence.</p>
         </div>
       </div>
       <div class="week-grid" id="week-grid"></div>
@@ -497,7 +494,7 @@
         <article><strong>&gt;10%</strong><span>Steering Committee approval required</span></article>
       </div>
 
-      <div class="callout"><strong>Exclusions:</strong> Payment/MFS transaction fees tied to GMV, Odoo Enterprise licensing before edition/user-count confirmation, taxes/VAT, and unusually high video/AI consumption are outside this planning envelope.</div>
+      <div class="callout"><strong>Exclusions:</strong> Payment/MFS transaction fees tied to GMV, any paid Odoo hosting/add-ons/support beyond the Community baseline, taxes/VAT, and unusually high video/AI consumption are outside this planning envelope.</div>
     </section>
 
     <section id="quality" class="section section-shell">
@@ -536,7 +533,7 @@
         <h3>Defer optional growth capabilities before weakening the foundation.</h3>
         <div class="fallback-columns">
           <div><strong>Defer first</strong><ul><li>Community Platform / Education LMS</li><li>Deep Wearable/CGM integration</li><li>In-house food model build</li><li>Franchise + Health Tourism/Sinbad integration</li></ul></div>
-          <div><strong>Protect</strong><ul><li>JK ID / SSO + API Gateway + Master Data</li><li>Core security controls</li><li>Finance / Inventory / POS</li><li>Clinical Foundation</li></ul></div>
+          <div><strong>Protect</strong><ul><li>JK ID / SSO + API Gateway + Master Data</li><li>Core security controls</li><li>Odoo commercial/financial core</li><li>Custom ERP / Clinical foundation</li></ul></div>
         </div>
       </div>
     </section>
@@ -562,15 +559,15 @@
       <div class="board-ask">
         <span class="mini-label">Recommended approval</span>
         <h2>Approve the 24-month roadmap with quarterly funding gates and a BDT 54.3M planning ceiling.</h2>
-        <p>Use BDT 48.4M as the delivery baseline and BDT 5.8M as controlled contingency. Preserve the architecture sequence: master data and ERP/POS first, Clinical next, then scale App, Community and AI capabilities on top of trusted operational data.</p>
+        <p>Use BDT 48.4M as the delivery baseline and BDT 5.8M as controlled contingency. Preserve the architecture sequence: master data and Odoo Community commercial core first, establish the Custom ERP/Clinical/Workforce platform next, then scale App, Community and AI capabilities on trusted operational data.</p>
         <div class="board-download">
           <div><strong>Board pack document</strong><span>Download the synchronized Technical Architecture, Execution Roadmap & Costing Plan in Word format.</span></div>
-          <a class="button button-primary" href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx" download>Download DOCX ↓</a>
+          <div class="hero-actions"><a class="button button-primary" href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx" download>Download DOCX ↓</a><a class="button button-secondary" href="JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.pdf" download>Download PDF ↓</a></div>
         </div>
         <div class="ask-grid">
           <div><strong>Before Q1</strong><span>Confirm named business owners and data-access owners.</span></div>
           <div><strong>Before Q2</strong><span>Validate salary bands and convert Odoo/UIUX placeholders to signed quotations.</span></div>
-          <div><strong>Before ERP scale</strong><span>Choose Odoo Community vs Enterprise and confirm license cost separately.</span></div>
+          <div><strong>Before commercial scale</strong><span>Lock the supported Odoo Community version/modules and validate POS offline/reconnect, e-commerce/Sales APIs, hosting, backup and any paid add-ons/support.</span></div>
           <div><strong>Every quarter</strong><span>Reforecast actual salary, cloud, AI, communications and storage unit costs.</span></div>
         </div>
       </div>
