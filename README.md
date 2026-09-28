@@ -1,33 +1,31 @@
-# JK Lifestyle — Technical Architecture, Execution & Costing Board Proposal
+# JK Lifestyle - Technical Architecture, Execution & Costing Proposal
 
-Static GitHub Pages site for the JK Lifestyle Digital Ecosystem CTO / Technical Architect board proposal. The website and downloadable Word board pack are synchronized.
+This repository contains the synchronized GitHub Pages proposal and downloadable board documents for the JK Lifestyle Digital Ecosystem.
 
-## Current synchronized architecture
+## Current architecture direction
 
-- 24-month architecture-led roadmap.
-- Hybrid enterprise model with **Odoo Community (open-source baseline)** plus a **custom JK ERP/Clinical platform**.
-- **Odoo Community** is the commercial/financial system of record for Product, Inventory/Warehouse, Procurement, POS, outlet sales, online/e-commerce sales processing, customer financial invoices, payment/reconciliation and Accounting.
-- **Custom JK ERP/Clinical** owns Doctor Profile, Patient/Appointment process, OPD/EMR, Care Plan, Clinical Billing workflow, ARM, Attendance and Payroll calculation/approval.
-- Confirmed clinical charges and approved payroll results post to Odoo through controlled APIs/events so the financial ledger remains single-source.
-- Website and Super App remain JK-owned experience channels; e-commerce transactions are processed through the Odoo integration boundary rather than a parallel custom sales ledger.
-- Odoo POS offline/reconnect behavior must be validated for the selected Community version during the pilot; a second custom POS ledger is not built unless the gap analysis proves it necessary.
-- Modular/bounded-domain architecture, API-first integration, RabbitMQ events, explicit consent/audit controls and progressive AI Buy→Build strategy remain unchanged.
-
-## Current planning baseline
-
-- BDT 26.9M loaded engineering + specialist cost
-- BDT 48.4M delivery baseline
-- BDT 5.8M controlled contingency
-- BDT 54.3M total planning ceiling (~5.43 crore)
-- ~14 active technical FTE at peak
-
-The costing is retained as the current planning baseline. The revised Odoo ownership boundary must be validated during the M1–M2 module/version/gap analysis; any material implementation, hosting, add-on or support cost variance should be reforecast through the quarterly gate process.
+- Existing outlet, product and opening-stock data is cleaned from Excel and migrated into Odoo Community Edition.
+- Odoo Community Edition is used initially for outlet Point of Sale (POS) and Inventory so operations can stabilize quickly.
+- JK Tech develops the long-term Inventory and POS modules in parallel.
+- The new JK Inventory and POS modules run beside Odoo during testing and replace it outlet by outlet only after sales, payment, return and stock totals reconcile.
+- The custom ERP manages doctor profiles, patients, appointments, outpatient workflows, patient medical records, clinical invoices, employee records, attendance, leave/rosters and payroll.
+- The ERP is the single reporting application for management and operational reports. During the Odoo transition it receives synchronized Odoo data; after cut-over it reads JK-owned operational modules directly.
+- Website and Super App remain the customer-facing channels. Their sales integration points to the active Inventory/sales backend during each transition stage.
 
 ## Files
 
-- `index.html` — board proposal content and visual structure
-- `styles.css` — responsive design and print styling
-- `script.js` — roadmap, tables, charts and interactive elements
-- `JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx` — synchronized downloadable Word board pack
+- `index.html` - the GitHub Pages board proposal.
+- `styles.css` - responsive layout and print styling.
+- `script.js` - roadmap, team, costing and interactive content.
+- `JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.docx` - synchronized Word proposal.
+- `JK_Lifestyle_Technical_Architecture_Execution_Costing_Plan.pdf` - synchronized PDF proposal.
 
-The page links to the DOCX using a relative same-origin URL, so the **Download DOCX** button works directly on GitHub Pages.
+The web page uses relative links to the Word and PDF files, so both downloads work directly from GitHub Pages when all files are placed in the repository root.
+
+## GitHub Pages
+
+Use the repository default branch and publish from `/ (root)` in **Settings -> Pages**.
+
+Project URL:
+
+`https://zahangir015.github.io/jk-lifestyle-proposal/`

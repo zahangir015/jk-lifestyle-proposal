@@ -1,84 +1,84 @@
 const stack = [
-  ["Web frontend", "Next.js (React) + TypeScript", "SSR for customer-facing SEO and a shared TypeScript component model for web/admin experiences."],
-  ["Mobile", "Flutter", "Single Android/iOS codebase with strong offline storage and BLE integration support."],
-  ["Application backend", "Node.js / NestJS", "Structured modules, TypeScript DTOs and a clean fit for the domain-oriented modular architecture."],
-  ["AI / ML services", "Python / FastAPI", "Keeps model inference, data science and ML tooling inside the native Python ecosystem."],
-  ["ERP core", "Odoo Community + API boundary", "Commercial/financial core: Product, Inventory/Warehouse, Procurement, POS, outlet and online/e-commerce sales, customer invoices, payment/reconciliation and Accounting."],
-  ["Primary database", "Managed PostgreSQL", "ACID behavior for finance/clinical data and JSONB flexibility for semi-structured care-plan data."],
-  ["Cache / session", "Redis", "Session state, rate limiting, queue support and fast operational state such as OPD tokens."],
-  ["Search", "PostgreSQL FTS → OpenSearch later", "Start simple; introduce OpenSearch only when catalogue/community/course volume justifies the operating cost."],
-  ["Events", "RabbitMQ → Kafka only if needed", "RabbitMQ is sufficient early; Kafka is deferred until device/event volume proves the need."],
-  ["Object storage", "S3-compatible + CDN", "Food/progress photos and course media, with compression and lifecycle policies to control cost."],
-  ["Offline store", "Odoo POS native offline/reconnect + SQLite/Isar for custom apps", "Do not duplicate the Odoo POS transaction ledger; custom clinical/mobile flows use local queues only where offline continuity is required."],
-  ["Hosting / delivery", "Managed Kubernetes + GitHub Actions / Argo CD", "Repeatable deployments, Dev/Staging/Prod parity and horizontal scaling for peak demand."]
+  ["Web frontend", "Next.js (React) + TypeScript", "This provides search-friendly customer pages and a shared frontend technology for the website and administration screens."],
+  ["Mobile", "Flutter", "This provides one Android/iOS codebase and supports offline storage and device integrations."],
+  ["Application backend", "Node.js / NestJS", "This provides clear modules, well-defined system interfaces and a good fit for the custom ERP and business services."],
+  ["AI / data services", "Python / FastAPI", "This keeps data processing, AI and model-serving work in the Python ecosystem."],
+  ["Initial POS & Inventory", "Odoo Community Edition", "Odoo CE is the first operational bridge. Clean Excel product, outlet and opening-stock data is migrated into Odoo so POS and Inventory can go live quickly."],
+  ["Long-term POS & Inventory", "JK-built modules", "The JK team builds the replacement Inventory and POS in parallel, tests it beside Odoo and moves outlets only after reconciliation passes."],
+  ["ERP reporting", "Central ERP reporting layer", "All management and operational reports are generated in the ERP, using synchronized Odoo data during transition and JK-owned data after cut-over."],
+  ["Primary database", "Managed PostgreSQL", "This provides reliable transactions for clinical, ERP and reporting data, with JSON support where flexible fields are needed."],
+  ["Cache / session", "Redis", "This supports sessions, rate limiting, caching and short-lived operational state."],
+  ["Events", "RabbitMQ first", "This supports background processing and system-to-system events without adding unnecessary infrastructure complexity."],
+  ["Object storage", "S3-compatible storage + Content Delivery Network", "This stores food photos, progress images and course media with compression and lifecycle rules to control cost."],
+  ["Hosting / delivery", "Managed Kubernetes + automated build/deployment", "This supports repeatable Development, Staging and Production deployments and allows workloads to scale when needed."]
 ];
 
 const roadmap = {
   1: [
-    ["M1", "Mobilize & discover", "Steering cadence, ADR register, concern discovery, Odoo/data access, NFRs and data classification.", "Approved scope v1 · risk register · prioritized backlog"],
-    ["M2", "Foundation v1", "Dev/Staging/Prod, CI/CD, API Gateway skeleton, JK ID model, master-data rules and Odoo Community module/version gap analysis.", "Environment readiness · identity sign-off · Odoo baseline confirmed"],
-    ["M3", "Odoo commercial core starts", "Odoo Community Finance/Inventory cleanup; Product/Warehouse/Procurement/POS/Sales/e-commerce configuration; migration tooling and integration contracts.", "Data-quality report · Odoo gap report · migration rehearsal #1"],
-    ["M4", "Odoo POS pilot + Custom ERP/Clinical start", "Odoo POS/outlet-sales pilot, stock/lot/FEFO configuration, Website-to-Odoo commerce adapter design, Doctor/Appointment workflow discovery and website design system.", "Odoo POS alpha UAT · offline/reconnect tests · clinical sign-off"],
-    ["M5", "Commercial + workforce workflows", "Odoo POS sale/return/session/payment and online sales; custom ERP ARM, Attendance and Payroll core; patient registration, Appointment/OPD queue and website catalogue/cart APIs.", "Outlet + online-sales UAT · workforce UAT · clinical desk UAT"],
-    ["M6", "Odoo Commercial Gate 1", "Shadow-mode Odoo POS pilot, inventory/payment/accounting reconciliation, online-order end-to-end test, MIS v1 and pilot training.", "Gate 1 · Odoo commercial pilot accepted · reconciliation passed · VAPT #1"],
-    ["M7", "Odoo rollout + Custom ERP/Clinical build", "First outlet wave on Odoo POS/commercial flow, EMR core, consent/audit, website frontend connected to Odoo product/stock/sales APIs and unified login/cart.", "Outlet-wave UAT · online-commerce regression · EMR sign-off"],
-    ["M8", "App workstream starts", "Care Plan authoring, website commerce transaction processing through Odoo, Flutter foundation, notification framework and AI-food API procurement.", "Website beta · Odoo commerce integration review · mobile architecture review"],
-    ["M9", "Clinical pilot + App core", "Clinical pilot, website journey with Odoo sales processing, app login/profile, care-plan APIs, membership model and clinical-billing-to-Odoo posting prototype.", "Clinical pilot UAT · web/Odoo regression UAT"],
-    ["M10", "Clinical + Website v1 go-live", "Doctor/Patient/Appointment/OPD/EMR + basic Care Plan live; online commerce processed by Odoo; clinical-invoice financial posting operational.", "Gate 2 · production go-live · Odoo/Clinical reconciliation · VAPT #2"],
-    ["M11", "Care loop implementation", "App planner/tasks, manual food log, reminders, membership/fitness and CRM/Customer 360 read model.", "App feature UAT · care-team acceptance"],
-    ["M12", "AI + device + community foundation", "Food-recognition buy phase, Health Connect/HealthKit foundation, moderation console and analytics events.", "AI accuracy baseline · moderation checklist"]
+    ["M1", "Mobilize & discover", "Confirm business owners, create the architecture decision log, review Excel/Odoo/current systems, define security and performance requirements, and prioritize the backlog.", "Scope v1 approved · risk register ready · backlog prioritized"],
+    ["M2", "Foundation + data preparation", "Set up the Development, Staging and Production environments, automated deployment, the central integration gateway, JK ID, master-data rules and the detailed Excel-to-Odoo migration mapping.", "Environment ready · identity approved · Excel data-quality report completed"],
+    ["M3", "Excel → Odoo CE migration", "Clean product, outlet and opening-stock data from Excel; configure Odoo CE Inventory and POS; create migration scripts and ERP reporting synchronization.", "Migration rehearsal #1 · opening stock reconciled · pilot dataset approved"],
+    ["M4", "Odoo CE outlet pilot + ERP start", "Run the first Odoo CE POS/Inventory outlet pilot. Start Doctor Profile, Appointment and patient medical-record design, and define the central ERP report catalogue.", "Outlet user acceptance test · stock/sales reconciliation · clinical workflow approved"],
+    ["M5", "ERP workforce + reporting core", "Keep Odoo CE live for outlet POS/Inventory. Build employee management, attendance, leave/roster, payroll, patient registration, Appointment/outpatient queue and first ERP sales/stock/clinical reports.", "Outlet acceptance · employee workflow acceptance · first report reconciliation"],
+    ["M6", "Odoo transition Gate 1", "Stabilize the Odoo CE pilot, reconcile sales/payments/stock, train outlet users, and approve the functional requirements for the JK-built Inventory and POS modules.", "Gate 1 · Odoo CE pilot accepted · reconciliation passed · independent security test #1"],
+    ["M7", "Odoo rollout + JK Inventory build", "Move the first outlet wave to Odoo CE, build the JK Inventory service, continue patient medical records and consent/audit, and connect the website to a sales adapter that can later switch away from Odoo.", "Outlet-wave acceptance · Inventory prototype · medical-record tests approved"],
+    ["M8", "JK POS build + App starts", "Build the first JK Point of Sale module on top of the new Inventory service. Continue Care Plan authoring, website sales integration, the Flutter mobile foundation, notifications and procurement of the food-recognition service.", "JK POS alpha · Website beta · mobile architecture review"],
+    ["M9", "Parallel POS/Inventory test", "Run Odoo CE and the JK-built POS/Inventory side by side at a pilot outlet. Compare sales, returns, payments, stock and closing balances while continuing the Clinical and App pilot.", "Parallel reconciliation passed · clinical pilot accepted · website regression passed"],
+    ["M10", "Clinical + Website v1 and first JK cut-over", "Go live with Doctor/Patient/Appointment/outpatient/patient medical records and basic Care Plan. If parallel reconciliation is successful, move the first approved outlet from Odoo CE to the JK POS/Inventory modules.", "Gate 2 · production go-live · first outlet cut-over accepted · independent security test #2"],
+    ["M11", "Care loop + outlet migration", "Continue the App planner, food log, reminders, membership and customer view while moving additional approved outlets to the JK POS/Inventory platform.", "App feature acceptance · outlet reconciliation remains clean"],
+    ["M12", "AI, devices + migration review", "Start food-recognition buy phase, Health Connect/HealthKit integration, moderation tools and analytics events. Review the remaining Odoo-to-JK outlet migration plan.", "AI quality baseline · migration progress reviewed"]
   ],
   2: [
-    ["M13", "Super App beta", "Care plan, nutrition log, membership, CRM, notifications, basic device sync and pilot cohort.", "Closed beta · clinician/patient UAT"],
-    ["M14", "Super App v1 go-live", "End-to-end Care Plan loop, Food Log AI, basic wearable/CGM path and operating support model.", "Gate 3 · App v1 accepted · VAPT #3"],
-    ["M15", "Community/LMS beta", "Community feed + moderation, LMS/course delivery, franchise/distribution and staff-app prototypes.", "Moderation UAT · franchise sign-off"],
-    ["M16", "Community live + Data platform", "Community v1, Education v1, warehouse foundation, event ingestion and BI semantic model.", "Content-safety gate · data-quality checks"],
-    ["M17", "Franchise & staff operations", "Franchise/distribution, corporate MOU, conditional Sinbad integration and field staff apps.", "Integration UAT · field pilot"],
-    ["M18", "Phase 4 Gate", "Community/Education/Franchise/staff apps release, SOPs and training.", "Gate 4 · business acceptance · handover"],
-    ["M19", "Data/BI scale", "Warehouse pipelines, advanced role dashboards and finance/clinical/commerce KPI layer.", "BI reconciliation against source systems"],
-    ["M20", "Predictive analytics prototype", "Adherence/drop-off prototype, cohort features, alert-quality monitoring and dataset governance.", "Offline model evaluation · clinical SME review"],
-    ["M21", "In-house food model POC", "Local dataset loop, model-serving POC and buy-vs-build cost benchmark.", "Model quality/cost decision gate"],
-    ["M22", "Scale-out", "Manager dashboard app, 15–20 outlet support, performance tuning and autoscaling/budget optimization.", "Load/performance UAT · DR rehearsal"],
-    ["M23", "Hardening & transition", "Security hardening, audit cleanup, upgrade rehearsal and ownership transfer to JK Tech.", "KT acceptance · runbook audit · resilience test"],
-    ["M24", "Program close / steady state", "Stabilization, backlog triage, SLO dashboard, annual operating model and Year-3 roadmap.", "Gate 5 · BAU ownership accepted"]
+    ["M13", "Super App beta + JK POS/Inventory rollout", "Run the Super App beta and continue outlet migration to the JK POS/Inventory modules with sales, stock and payment reconciliation.", "Closed beta · outlet cut-over evidence approved"],
+    ["M14", "Super App v1 go-live", "Release the end-to-end Care Plan loop, Food Log AI and basic wearable path, while keeping central ERP reporting across all modules.", "Gate 3 · App v1 accepted · independent security test #3"],
+    ["M15", "Complete main POS/Inventory migration", "Move the remaining priority outlets from Odoo CE to the JK POS/Inventory platform and close major operational gaps.", "Priority outlet migration accepted · Odoo transition reduced"],
+    ["M16", "Community live + reporting scale", "Release Community/Education v1 and expand ERP reporting and central data pipelines.", "Content-safety gate · report reconciliation passed"],
+    ["M17", "Franchise & staff operations", "Add franchise/distribution, selected partner integrations and field staff applications.", "Integration acceptance · field pilot"],
+    ["M18", "Phase 4 Gate", "Complete the Community/Education/Franchise release, operating procedures, training and ownership handover.", "Gate 4 · business acceptance · operational handover"],
+    ["M19", "Reporting and analytics scale", "Expand ERP dashboards for outlet sales, Inventory, online sales, clinical operations, attendance and payroll.", "ERP reports reconcile with all source systems"],
+    ["M20", "Predictive analytics prototype", "Prototype adherence/drop-off analysis, review alert quality and strengthen dataset governance.", "Offline model evaluation · clinical expert review"],
+    ["M21", "In-house food model proof of concept", "Train the prototype with the local dataset, test how the model is served and compare the in-house operating cost with the third-party service cost.", "Model quality/cost decision gate"],
+    ["M22", "Scale-out", "Support 15–20 outlets, tune performance, test autoscaling and complete a disaster-recovery rehearsal.", "Load/performance acceptance · disaster-recovery test passed"],
+    ["M23", "Hardening & transition", "Complete security hardening, audit cleanup, upgrade rehearsal, documentation and knowledge transfer.", "Knowledge transfer accepted · runbooks reviewed · resilience tested"],
+    ["M24", "Program close / steady operations", "Stabilize the platform, close critical backlog items, review the service performance dashboard, confirm the annual operating model and approve the Year-3 roadmap.", "Gate 5 · normal operational ownership accepted"]
   ]
 };
 
 const weeks = [
-  ["W1", "Program mobilization", "Sponsors/owners, RAID, stakeholder map, decision cadence, repo ownership and access requests.", "Kickoff minutes + accountable owner per concern"],
-  ["W2", "Current-state & data audit", "Odoo, Excel, website, patient/clinical workflows, duplicate master data and integration inventory.", "As-is inventory + migration risk report"],
-  ["W3", "Cloud / engineering baseline", "Dev/Staging/Prod, network/IAM, secrets, repo, release model and CI skeleton.", "Environment checklist"],
-  ["W4", "Platform skeleton", "API Gateway, observability, logging/trace IDs, auth architecture, backup baseline and standards.", "Architecture review #1"],
-  ["W5", "JK ID / SSO", "Party/role model, OTP/staff 2FA, token flow, consent linkage and first login.", "Identity demo + security UAT"],
-  ["W6", "Master Data", "Product/customer/employee schemas, mapping rules, cleansing scripts and staged imports.", "Migration rehearsal #1"],
-  ["W7", "Odoo Community stabilization", "Finance/inventory gap analysis; Product/Warehouse/POS/Sales/e-commerce module configuration and supported API/integration contract.", "Odoo remediation + configuration backlog approved"],
-  ["W8", "Odoo POS & sales core", "POS sale/return/session/payment, product/stock availability, outlet sales and online sales-order API; reconnect/offline test plan.", "Odoo POS + online sales alpha demo"],
-  ["W9", "Offline, idempotency & reconciliation", "Validate Odoo POS offline/reconnect behavior, duplicate transaction protection, stock/payment reconciliation and Website/App adapter retry rules.", "Network-failure + reconnect test"],
-  ["W10", "MIS & migration rehearsal", "Weekly sales/stock MIS, Odoo/Excel reconciliation and pilot outlet master data.", "MIS sign-off + migration rehearsal #2"],
-  ["W11", "Pilot outlet + online UAT", "Training, device/printer/payment tests, outlet POS + online order parallel-run script and support channel.", "Pilot-readiness checklist"],
-  ["W12", "Shadow-mode pilot & Gate 1 prep", "Live Odoo POS/commercial shadow usage, defect burn-down, stock/payment/accounting reconciliation, management demo and next-quarter plan.", "Go/no-go for controlled Odoo commercial cut-over"]
+  ["W1", "Program mobilization", "Confirm sponsors, business owners, risks, decision cadence, repository ownership and required system access.", "Kickoff minutes + accountable owner per business area"],
+  ["W2", "Current-state & data audit", "Review Excel files, current Odoo use, website, outlet operations, clinical workflows, duplicate master data and integrations.", "Current-state inventory + migration risk report"],
+  ["W3", "Cloud / engineering baseline", "Set up Development, Staging and Production, network access, secrets, repositories, release rules and automated build/deployment.", "Environment checklist"],
+  ["W4", "Platform skeleton", "Create the central integration gateway, system monitoring, request tracking, login design, backup baseline and security standards.", "Architecture review #1"],
+  ["W5", "JK ID / single sign-on", "Create the person-and-role model, one-time-password login, staff two-step verification, session/token flow, consent linkage and the first end-to-end login.", "Identity demo + security acceptance"],
+  ["W6", "Clean and map Excel data", "Clean product, outlet, stock, customer and employee data; define mapping IDs; prepare staged imports into Odoo CE and the ERP reporting layer.", "Migration rehearsal #1"],
+  ["W7", "Configure Odoo CE POS & Inventory", "Configure products, outlets, opening stock, Point of Sale sessions, users and permissions. Confirm the system interfaces and reporting synchronization needed by the ERP.", "Odoo CE pilot configuration approved"],
+  ["W8", "Odoo CE outlet pilot", "Test sale, return, payment, outlet closing, stock movement, receipt/printer and internet-loss/reconnect behavior in Odoo CE.", "Odoo CE POS & Inventory alpha demo"],
+  ["W9", "Reconciliation & replacement requirements", "Compare Excel opening data with Odoo, test network failure/reconnect, document gaps, and convert real outlet workflows into requirements for the JK-built POS and Inventory modules.", "Reconciliation report + approved replacement backlog"],
+  ["W10", "ERP reporting v1", "Build the first ERP reports for outlet sales and stock using synchronized Odoo data, and for online sales using the Website/App order source. Reconcile the combined report totals.", "ERP report totals match Odoo for outlet/stock data and the Website/App source for online sales · migration rehearsal #2"],
+  ["W11", "Pilot outlet user acceptance", "Train outlet users and test device, printer, payment, stock and reporting workflows. Finalize support and rollback steps.", "Pilot-readiness checklist"],
+  ["W12", "Odoo CE live pilot & JK build plan", "Run the controlled Odoo CE pilot, close critical defects, reconcile sales/stock, demonstrate ERP reports and approve the next-quarter plan for the JK Inventory and POS build.", "Go/no-go for wider Odoo transition + approved JK replacement plan"]
 ];
 
 const team = [
-  ["M1–2", "6.0", "Architect, 2 backend, DevOps, 0.5 QA, Odoo specialist, 0.5 UI/UX", "Foundation + Odoo discovery"],
-  ["M3–6", "8.5", "Architect, 3 backend, DevOps, QA, Frontend, Odoo specialist, 0.5 UI/UX", "ERP/POS + early Clinical/Website"],
-  ["M7–10", "13.5", "Architect, 4 backend, DevOps, 2 QA, 2 Frontend, 2 Mobile, Odoo specialist, 0.5 UI/UX", "Peak Clinical/Website + App start"],
-  ["M11–14", "14.0", "Architect, 4 backend, DevOps, 2 QA, 2 Frontend, 3 Mobile, in-house Odoo", "Super App / Care Plan peak"],
-  ["M15–18", "12.0", "Architect, 4 backend, DevOps, 2 QA, Frontend, 2 Mobile, in-house Odoo", "Community/Franchise + Data foundation"],
-  ["M19–24", "11.0", "Architect, 3 backend, DevOps, 2 QA, Frontend, 2 Mobile, in-house Odoo", "Scale, BI/AI, hardening, KT"]
+  ["M1–2", "6.0", "Architect, 2 backend engineers, Platform/DevOps engineer, part-time test engineer, Odoo specialist and part-time user-interface designer", "Foundation + Excel/Odoo discovery"],
+  ["M3–6", "8.5", "Architect, 3 backend engineers, Platform/DevOps engineer, test engineer, frontend engineer, Odoo specialist and part-time user-interface designer", "Odoo CE transition + early ERP/Clinical/Reporting"],
+  ["M7–10", "13.5", "Architect, 4 backend engineers, Platform/DevOps engineer, 2 test engineers, 2 frontend engineers, 2 mobile engineers, Odoo specialist and part-time user-interface designer", "JK Inventory/POS build + Clinical/Website + App start"],
+  ["M11–14", "14.0", "Architect, 4 backend engineers, Platform/DevOps engineer, 2 test engineers, 2 frontend engineers, 3 mobile engineers and ERP/Odoo engineer", "Super App + outlet migration + reporting"],
+  ["M15–18", "12.0", "Architect, 4 backend engineers, Platform/DevOps engineer, 2 test engineers, frontend engineer, 2 mobile engineers and ERP engineer", "Finish POS/Inventory migration + Community/Franchise"],
+  ["M19–24", "11.0", "Architect, 3 backend engineers, Platform/DevOps engineer, 2 test engineers, frontend engineer, 2 mobile engineers and ERP engineer", "Reporting, analytics, hardening and knowledge transfer"]
 ];
 
 const rates = [
-  ["Tech Lead / Architect", "In-house", "200,000", "Architecture, security, vendor governance, product/backlog, process mapping, acceptance, Data/AI & ML oversight, moderation governance, final go-live sign-off"],
-  ["Senior Backend Engineer", "In-house", "100,000", "API Gateway, core platform, domain architecture"],
-  ["Mid Backend Engineer", "In-house", "80,000", "Custom ERP/Clinical, ARM/Attendance/Payroll, Odoo integration adapters, Membership and Community services"],
-  ["Frontend Engineer", "In-house", "80,000", "Next.js website/admin experiences"],
-  ["Flutter Mobile Engineer", "In-house", "70,000", "Super App, offline sync and device integrations"],
-  ["QA / Test Engineer", "In-house", "50,000", "Manual + automation + release/UAT coordination"],
-  ["DevOps / Platform Engineer", "In-house", "100,000", "Cloud, Kubernetes, CI/CD, security baseline and observability"],
-  ["Odoo/ERP Engineer (after transition)", "In-house", "70,000", "Odoo Community Product/Inventory/POS/Sales/e-commerce/Finance extension, supported integrations and maintenance"],
-  ["Odoo Specialist", "Outsourced", "70,000 / FTE-month", "Initial Odoo Community stabilization across Finance/Inventory/POS/Sales/e-commerce, integration support and knowledge transfer"],
-  ["UI/UX Designer", "Contract", "80,000 / month", "Design system, low-literacy UX and service flows"]
+  ["Tech Lead / Architect", "In-house", "200,000", "Architecture, security, vendor management, product/backlog ownership, process mapping, acceptance criteria, Data/AI oversight, moderation governance and final go-live approval"],
+  ["Senior Backend Engineer", "In-house", "100,000", "Central integration gateway, core ERP platform, Inventory and Point of Sale architecture, and business-module design"],
+  ["Mid Backend Engineer", "In-house", "80,000", "Custom ERP/Clinical, employee management, Attendance, Payroll, central reporting, Odoo transition adapters, Membership and Community services"],
+  ["Frontend Engineer", "In-house", "80,000", "Next.js website and administration experiences"],
+  ["Flutter Mobile Engineer", "In-house", "70,000", "Super App, offline synchronization and device integrations"],
+  ["Test Engineer", "In-house", "50,000", "Manual testing, automation, release testing and user acceptance coordination"],
+  ["DevOps / Platform Engineer", "In-house", "100,000", "Cloud, Kubernetes, automated build/deployment, security baseline and system monitoring"],
+  ["ERP / Odoo Engineer", "In-house", "70,000", "Odoo CE transition support, ERP reporting integration and migration to JK-built POS/Inventory"],
+  ["Odoo Specialist", "Outsourced", "70,000 / person-month", "Initial Excel migration, Odoo CE Inventory/POS setup, pilot support, integration support and knowledge transfer"],
+  ["UI/UX Designer", "Contract", "80,000 / month", "Design system, accessible user experience and service flows"]
 ];
 
 const devCosts = [
@@ -94,9 +94,9 @@ const devCosts = [
 const budget = [
   ["Engineering + specialists", 26.94],
   ["Cloud / platform", 10.0],
-  ["AI / Nutrition API", 1.8],
+  ["Food-recognition and nutrition service", 1.8],
   ["Communication / Maps / Monitoring / SaaS", 2.4],
-  ["Independent VAPT / security", 1.8],
+  ["Independent security testing", 1.8],
   ["Engineering / test / field hardware", 2.5],
   ["Migration / training / change", 2.0],
   ["Recruitment / onboarding", 1.0],
@@ -104,53 +104,53 @@ const budget = [
 ];
 
 const quarters = [
-  ["Q1 · M1–3", 4.79, "Foundation + identity/master data + Odoo Community baseline start"],
-  ["Q2 · M4–6", 5.06, "Odoo POS/commercial pilot + Custom ERP/Clinical/Website start"],
-  ["Q3 · M7–9", 6.06, "Odoo commercial rollout + Custom ERP/Clinical/Website build + App foundation"],
-  ["Q4 · M10–12", 7.06, "Clinical + Website go-live with Odoo commerce processing; App/Care loop build"],
-  ["Q5 · M13–15", 6.88, "Super App go-live + Community/LMS beta"],
-  ["Q6 · M16–18", 6.33, "Community/Education/Franchise + warehouse"],
-  ["Q7 · M19–21", 6.11, "BI/AI maturity + local model POC"],
-  ["Q8 · M22–24", 6.15, "Scale, DR, hardening and handover"]
+  ["Q1 · M1–3", 4.79, "Foundation + Excel cleanup + Odoo CE migration start"],
+  ["Q2 · M4–6", 5.06, "Odoo CE POS/Inventory pilot + ERP/Clinical/Reporting start"],
+  ["Q3 · M7–9", 6.06, "JK Inventory/POS build + Odoo rollout + Clinical/Website/App foundation"],
+  ["Q4 · M10–12", 7.06, "First JK POS/Inventory cut-over + Clinical/Website go-live + App build"],
+  ["Q5 · M13–15", 6.88, "Super App go-live + main outlet migration + Community beta"],
+  ["Q6 · M16–18", 6.33, "Community/Education/Franchise + central data/reporting"],
+  ["Q7 · M19–21", 6.11, "ERP reporting/analytics + AI maturity"],
+  ["Q8 · M22–24", 6.15, "Scale, disaster recovery, hardening and handover"]
 ];
 
 const infra = [
-  ["M1–3", "0.12", "0.36", "Foundation/dev/test + small production footprint"],
-  ["M4–6", "0.20", "0.60", "Odoo POS/commercial pilot + early Custom ERP/Clinical/Website"],
-  ["M7–12", "0.30", "1.80", "Odoo commercial production + Website/Clinical + App beta/media"],
-  ["M13–18", "0.50", "3.00", "Super App + food photos + Community/LMS + warehouse"],
-  ["M19–24", "0.70", "4.20", "Higher usage, BI/AI workloads and 15–20 outlet support"],
+  ["M1–3", "0.12", "0.36", "Foundation, Development/Testing and a small pilot footprint"],
+  ["M4–6", "0.20", "0.60", "Odoo CE outlet pilot + early ERP/Clinical/Website"],
+  ["M7–12", "0.30", "1.80", "Odoo transition + JK POS/Inventory build + Website/Clinical/App beta"],
+  ["M13–18", "0.50", "3.00", "Super App, media, Community/Education and reporting/data platform"],
+  ["M19–24", "0.70", "4.20", "Higher usage, analytics/AI workloads and 15–20 outlet support"],
   ["TOTAL", "", "9.96", "Rounded to BDT 10.0M in the program budget"]
 ];
 
 const quality = [
-  ["Every sprint", "Unit/integration tests, API contract checks, targeted UAT, demo and security/dependency scan", "Defects triaged before next sprint planning"],
-  ["Every month", "Regression pack, cloud-cost review, vulnerability backlog and data reconciliation", "Monthly delivery + burn report"],
-  ["Before outlet/clinic rollout", "Migration rehearsal, staff training, parallel run, rollback plan and support roster", "Business-owner cut-over approval"],
-  ["Before major public go-live", "Performance/load test, VAPT, DR/backup restore, observability/SLOs and privacy/consent verification", "Formal go/no-go chaired by Tech Lead + Business Owner"],
-  ["Post go-live 2–4 weeks", "Hypercare, incident review, adoption metrics and backlog stabilization", "Exit only when SLO/defect thresholds are stable"]
+  ["Every sprint", "Run unit tests, integration tests, system-interface checks, targeted user acceptance tests, demonstrations and security/dependency scans.", "Critical defects are triaged before the next sprint."],
+  ["Every month", "Run regression tests, cloud-cost review, security backlog review and data/report reconciliation.", "A monthly delivery and cost report is approved."],
+  ["Before outlet/clinic rollout", "Complete migration rehearsal, staff training, parallel run, rollback plan and support roster.", "The business owner approves cut-over."],
+  ["Before major public go-live", "Run performance tests, independent security testing, disaster-recovery/backup restore testing, monitoring checks, agreed service-target checks and privacy/consent verification.", "The Tech Lead and Business Owner make the formal go/no-go decision."],
+  ["Post go-live 2–4 weeks", "Provide focused post-launch support, review incidents, adoption and open defects.", "Exit focused support only when agreed service targets and defect levels are stable."]
 ];
 
 const risks = [
-  ["Hiring delay", "High", "Pushes the critical path because JK Tech starts with no bench.", "Start Phase-2/3 hiring during Phase 0–1; keep approved specialist bridge contracts."],
-  ["Dirty Odoo / Excel data", "High", "Rework, failed reconciliation and rollout delay.", "Profile data in M1–2; stage migration; physical stock count before outlet cut-over."],
-  ["Clinical workflow churn", "High", "EMR / Care Plan rework.", "Embed Clinical SME, prototype early and sign acceptance criteria before build."],
-  ["Odoo over-customization", "Medium/High", "Upgrade/maintenance lock-in or recreating differentiated clinical/HR logic inside Odoo.", "Keep Odoo focused on the commercial/financial core; keep Clinical/ARM/Attendance/Payroll in custom ERP; use supported APIs/adapters and regression tests."],
-  ["Cloud / media / AI usage spike", "Medium", "Run cost exceeds envelope.", "Compression/lifecycle, caching/batching, quotas and monthly unit-cost dashboard."],
-  ["Vendor / API availability", "Medium", "Blocks Sinbad, wearable or AI features.", "Adapter interfaces, manual fallback and defer unverified integrations."],
-  ["Scope expansion", "High", "Budget and timeline drift.", "Definition of Done + change control; contingency is not a scope-slush fund."],
-  ["Security / compliance defect", "High", "Go-live delay and business risk.", "Security by design, field encryption, read-audit and independent VAPT gates."]
+  ["Hiring delay", "High", "The delivery schedule can slip because JK Tech starts with a small team.", "Start hiring early and keep approved specialist support available for transition work."],
+  ["Dirty Excel / Odoo data", "High", "Bad source data can cause stock errors, failed reconciliation and rollout delay.", "Profile and clean data early, stage migrations and perform physical stock checks before outlet cut-over."],
+  ["Clinical workflow changes", "High", "Late workflow changes can cause repeated work in patient records and Care Plans.", "Keep clinical subject-matter experts involved, prototype early and approve acceptance criteria before full build."],
+  ["Odoo transition becomes permanent", "Medium/High", "A temporary bridge can become long-term technical debt if the JK replacement is delayed.", "Give the JK Inventory/POS replacement a dated roadmap, run parallel reconciliation and move outlets in controlled waves."],
+  ["Reporting mismatch", "High", "Management can lose trust if ERP reports do not match outlet, Inventory, clinical or payroll source totals.", "Use source references, daily reconciliation and report sign-off during every migration wave."],
+  ["Cloud / media / AI usage spike", "Medium", "Monthly run cost can exceed the approved budget.", "Use compression, lifecycle rules, caching, batching, quotas and monthly unit-cost reviews."],
+  ["Scope expansion", "High", "Uncontrolled additions can increase budget and timeline.", "Use a clear Definition of Done, formal change control and quarterly approval gates."],
+  ["Security / compliance defect", "High", "A serious defect can delay go-live and create business risk.", "Use security-by-design, encryption, access audit logs and independent security testing before major releases."]
 ];
 
 const gantt = [
   ["Foundation / Platform", 1, 24, false],
-  ["Odoo Commercial / Financial ERP", 2, 24, true],
-  ["Custom ERP / Clinical / Workforce", 4, 24, false],
-  ["Website", 4, 10, true],
-  ["Super App / Care Plan", 8, 14, false],
-  ["Community / Education", 12, 18, true],
-  ["Franchise / Staff Apps", 14, 18, false],
-  ["Data / BI / AI", 1, 24, true]
+  ["Odoo CE POS / Inventory transition", 2, 15, true],
+  ["Custom ERP / Clinical / Reporting", 4, 24, false],
+  ["JK-built POS / Inventory", 7, 16, true],
+  ["Website", 4, 10, false],
+  ["Super App / Care Plan", 8, 14, true],
+  ["Community / Education", 12, 18, false],
+  ["Data / Analytics / AI", 1, 24, true]
 ];
 
 function makeTable(el, headers, rows) {
